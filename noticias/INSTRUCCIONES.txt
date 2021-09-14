@@ -1,0 +1,4 @@
+-La carpeta entera noticias se debe colocar dentro de la carpeta htdocs del paquete xampp.
+-No se debe mover ningún archivo de sitio, ya que está todo organizado para que funcione.
+-El script de la base de datos con los datos para probar la aplicación se encuetra en noticias/sql/db_ejercicio.sql
+-La dirección de la página es localhost/noticias/

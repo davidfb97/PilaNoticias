@@ -1,0 +1,30 @@
+<html !DOCTYPE>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/estilo.css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<title>Tecnología Cliente Web</title>
+</head>
+<body class="bodyclass">
+	<div class="divPrincNuevaNoticia"><center><h1>Formulario para añadir una nueva noticia a la pila</h1></center></div>
+	<div tabindex="0" class="divLadoNuevaNoticia" style="left:0%" onclick="window.location.href='index.html';"><center><h1>Volver</h1></center></div>
+	<div tabindex="0" class="divLadoNuevaNoticia" style="left:80%" onclick="window.location.href='index.html';"><center><h1>Volver</h1></center></div>
+	<div class="formulario"><form action="servidorNoticias.php" method="POST" enctype="multipart/form-data" id="formNuevaNoticia">
+		<input type="hidden" name="action" value="nuevaNoticia">
+		<label for="tituloForm">Introduce el título:</label><br>
+		<input id="tituloForm" type="text" name="titulo" size="47" required></input>
+		<br><br>
+		<label for="imagenForm">Añade la foto:</label><br>
+		<input id="imagenForm" type="file" name="imagen">
+		<br><br>
+		<label for="text">Introduce el texto:</label><br>
+		<textarea  id="text" rows="8" cols="50" name="texto" form="formNuevaNoticia" required></textarea>
+		<br><br>
+		<center><input value="Añadir" type="submit"></center>
+	</form></div>
+</body>
+</html>

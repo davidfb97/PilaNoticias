@@ -1,0 +1,56 @@
+<html !DOCTYPE>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/estilo.css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://kit.fontawesome.com/3f6b6412aa.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/noticia.js"></script>
+	
+	<title>Tecnología Cliente Web</title>
+</head>
+<body>
+	<div class="divPrincNuevaNoticia"><center><h1>Edición de noticias</h1></center></div>
+	<div tabindex="0" class="divIzqNoticia" onclick="volver()" onkeypress="capturaEvento()"><div class="tituloLado" style="margin-top:12px;left:30%"><h2>Volver</h2><i class="fas fa-arrow-left fa-lg icono" style="left:150%;top:30%"></i></div></div>
+	<div class="divDerNoticia"><center><h5>Refresco de noticia</h5></center><label for="refrescoNoticia">Refrescar cada</label><input type="text" id="refrescoNoticia" onchange="refrescar()" style="position:absolute;left:35%;top:40%;width:20%"/></div>
+	<center><div class="formAutenticacion" id="formAutenticacion">
+		<h4 style="margin-top:10px">Formulario para identificarse como administrador</h4><br>
+		<label for="usuario">Usuario:</label>
+		<input type="text" id="usuario"name="usuario" size="15" required></input>
+		<label for="password">Contraseña:</label>
+		<input type="password" id="password" name="password" size="15" required></input>
+		<button style="margin-left:15px" onclick="identificarse();">Autenticar</button>
+		<br><br>
+	</div></center>
+	<div class="noticia" id="noticia"></div>
+	<div class="comentarios" id="comentarios">
+		<div class="refrescarComentarios"><label for="refrescoComentarios">Refrescar cada</label><input id="refrescoComentarios" type="text" style="width:15%;margin-left:15px; margin-right:15px;" onchange="refrescarComentarios();"></input></div>
+		<center><h4 style="margin-bottom:30px">Comentarios</h4>
+		<div class='listaComentarios' id='listaComentarios'></div>
+		<a href="javascript:paginaPrevia()" id="btn_prev" style="color:black; font-weight:bold">Prev</a>
+		<a href="javascript:paginaSiguiente()" id="btn_next" style="color:black; font-weight:bold">Next</a>
+		<span id="pagina"></span><br><br>
+		<h5>Añade tu comentario</h5>
+		<label for="nombre">Introduce tu nombre:</label>
+		<input type="text" id="nombre"name="nombre" size="15"></input><br>
+		<label for="texto">Introduce el comentario:</label><br>
+		<textarea id="texto" rows="6" cols="70" name="texto" onkeypress='nuevoComentarioSiEnterKey()'></textarea><br>
+		<button style="margin-top:10px" onclick="nuevoComentario()">Añade</button>
+	</div>
+	<div class="carrusel" id="carrusel">
+		<center><h4 style="margin-bottom:30px">Carrusel de imágenes</h4>
+		<div class='listaFotos' id='listaFotos'></div><br>
+		<h5>Añade tu fotografía/as</h5>
+		<form action="servidorNoticias.php" method="POST" enctype="multipart/form-data" id="formCarrusel">
+			<input type="hidden" name="action" value="nuevasImagenes"/>
+			<input type="hidden" name="idnoticia" id="idnoticia"/>
+			<label for="imagenesForm">Introduce las imágenes:</label>
+			<input id="imagenesForm" style="margin-top:15px"type="file" name="imagenes[]" multiple required></input><br>
+			<input type="submit" style="margin-top:20px" value="Añade"></input>
+		</form>
+	<div>
+</body>
+</html>
